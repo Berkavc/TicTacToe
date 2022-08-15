@@ -1,0 +1,11 @@
+<resources>
+    <!-- 1) Error Strings: -->
+
+    <!--1.1) Error Dialog -->
+    <string name="error_dialog_failure_message_title">Error</string>
+
+    <!-- 1.2) Permission System -->
+    <string name="error_permission_system_message">Please give %1$s permission</string>
+    <string name="error_permission_system_storage">Storage</string>
+    <string name="error_permission_system_draw_overlay">Draw overlay</string>
+</resources>

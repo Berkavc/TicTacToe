@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 1) Error Strings: -->
+
+    <!--1.1) Error Dialog -->
+    <string name="error_dialog_failure_message_title">Hata</string>
+
+    <!-- 1.1) Permission System -->
+    <string name="error_permission_system_message">Lütfen %1$s iznini veriniz</string>
+    <string name="error_permission_system_storage">Depo</string>
+    <string name="error_permission_system_draw_overlay">Uygulama üstüne çizme</string>
+</resources>

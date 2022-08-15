@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.wear.widget.BoxInsetLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/box_inset_layout_padding"
+        android:background="@color/white"
+        tools:context=".ui.MainActivity"
+        tools:deviceIds="wear">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_boxedEdges="all">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.35">
+            </androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.65">
+            </androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.40">
+            </androidx.constraintlayout.widget.Guideline>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.65">
+            </androidx.constraintlayout.widget.Guideline>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewMainTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/defaultTextView"
+                android:gravity="center"
+                android:text="@string/app_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewMainReset"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                app:layout_constraintStart_toEndOf="@id/textViewMainTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textViewMainTitle"
+                app:layout_constraintBottom_toBottomOf="@id/textViewMainTitle"
+                app:srcCompat="@drawable/ic_reset">
+            </androidx.appcompat.widget.AppCompatImageView>
+
+            <View
+                android:id="@+id/viewMainVerticalFirst"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/black"
+                android:layout_marginVertical="12dp"
+                app:layout_constraintTop_toBottomOf="@id/textViewMainTitle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline_1">
+            </View>
+
+            <View
+                android:id="@+id/viewMainVerticalSecond"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/black"
+                android:layout_marginVertical="12dp"
+                app:layout_constraintTop_toBottomOf="@id/textViewMainTitle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline_2">
+            </View>
+
+            <View
+                android:id="@+id/viewMainHorizontalFirst"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintTop_toBottomOf="@id/guideline_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+            </View>
+
+            <View
+                android:id="@+id/viewMainHorizontalSecond"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintTop_toBottomOf="@id/guideline_4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+            </View>
+
+            <FrameLayout
+                android:id="@+id/frameLayoutMainOne"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintEnd_toEndOf="@id/viewMainVerticalFirst"
+                app:layout_constraintStart_toStartOf="@id/viewMainHorizontalFirst"
+                app:layout_constraintTop_toTopOf="@id/viewMainVerticalFirst"
+                app:layout_constraintBottom_toBottomOf="@id/viewMainHorizontalFirst"
+                tools:background="@drawable/bg_cross">
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayoutMainTwo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintEnd_toEndOf="@id/viewMainVerticalSecond"
+                app:layout_constraintStart_toStartOf="@id/viewMainVerticalFirst"
+                app:layout_constraintTop_toTopOf="@id/viewMainVerticalFirst"
+                app:layout_constraintBottom_toBottomOf="@id/viewMainHorizontalFirst"
+                tools:background="@drawable/bg_circle">
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayoutMainThree"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintEnd_toEndOf="@id/viewMainHorizontalFirst"
+                app:layout_constraintStart_toStartOf="@id/viewMainVerticalSecond"
+                app:layout_constraintTop_toTopOf="@id/viewMainVerticalFirst"
+                app:layout_constraintBottom_toBottomOf="@id/viewMainHorizontalFirst"
+                tools:background="@drawable/bg_cross">
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayoutMainFour"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintEnd_toEndOf="@id/viewMainVerticalFirst"
+                app:layout_constraintStart_toStartOf="@id/viewMainHorizontalFirst"
+                app:layout_constraintTop_toBottomOf="@id/viewMainHorizontalFirst"
+                app:layout_constraintBottom_toBottomOf="@id/viewMainHorizontalSecond"
+                tools:background="@drawable/bg_cross">
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayoutMainFive"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintEnd_toEndOf="@id/viewMainVerticalSecond"
+                app:layout_constraintStart_toStartOf="@id/viewMainVerticalFirst"
+                app:layout_constraintTop_toBottomOf="@id/viewMainHorizontalFirst"
+                app:layout_constraintBottom_toBottomOf="@id/viewMainHorizontalSecond"
+                tools:background="@drawable/bg_cross">
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayoutMainSix"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintEnd_toEndOf="@id/viewMainHorizontalFirst"
+                app:layout_constraintStart_toStartOf="@id/viewMainVerticalSecond"
+                app:layout_constraintTop_toBottomOf="@id/viewMainHorizontalFirst"
+                app:layout_constraintBottom_toBottomOf="@id/viewMainHorizontalSecond"
+                tools:background="@drawable/bg_cross">
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayoutMainSeven"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintEnd_toEndOf="@id/viewMainVerticalFirst"
+                app:layout_constraintStart_toStartOf="@id/viewMainHorizontalFirst"
+                app:layout_constraintTop_toBottomOf="@id/viewMainHorizontalSecond"
+                app:layout_constraintBottom_toBottomOf="@id/viewMainVerticalFirst"
+                tools:background="@drawable/bg_cross">
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayoutMainEight"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintEnd_toEndOf="@id/viewMainVerticalSecond"
+                app:layout_constraintStart_toStartOf="@id/viewMainVerticalFirst"
+                app:layout_constraintTop_toBottomOf="@id/viewMainHorizontalSecond"
+                app:layout_constraintBottom_toBottomOf="@id/viewMainVerticalFirst"
+                tools:background="@drawable/bg_cross">
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayoutMainNine"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintEnd_toEndOf="@id/viewMainHorizontalFirst"
+                app:layout_constraintStart_toStartOf="@id/viewMainVerticalSecond"
+                app:layout_constraintTop_toBottomOf="@id/viewMainHorizontalSecond"
+                app:layout_constraintBottom_toBottomOf="@id/viewMainVerticalFirst"
+                tools:background="@drawable/bg_cross">
+            </FrameLayout>
+
+            <View
+                android:id="@+id/viewMainVerticalOneWinner"
+                android:layout_width="2dp"
+                android:layout_height="0dp"
+                android:background="@color/red"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@id/viewMainVerticalFirst"
+                app:layout_constraintBottom_toBottomOf="@id/viewMainVerticalFirst"
+                app:layout_constraintStart_toStartOf="@id/frameLayoutMainOne"
+                app:layout_constraintEnd_toEndOf="@id/frameLayoutMainOne">
+            </View>
+
+            <View
+                android:id="@+id/viewMainVerticalTwoWinner"
+                android:layout_width="2dp"
+                android:layout_height="0dp"
+                android:background="@color/red"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@id/viewMainVerticalFirst"
+                app:layout_constraintBottom_toBottomOf="@id/viewMainVerticalFirst"
+                app:layout_constraintStart_toStartOf="@id/frameLayoutMainTwo"
+                app:layout_constraintEnd_toEndOf="@id/frameLayoutMainTwo">
+            </View>
+
+            <View
+                android:id="@+id/viewMainVerticalThreeWinner"
+                android:layout_width="2dp"
+                android:layout_height="0dp"
+                android:background="@color/red"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@id/viewMainVerticalFirst"
+                app:layout_constraintBottom_toBottomOf="@id/viewMainVerticalFirst"
+                app:layout_constraintStart_toStartOf="@id/frameLayoutMainThree"
+                app:layout_constraintEnd_toEndOf="@id/frameLayoutMainThree">
+            </View>
+
+            <View
+                android:id="@+id/viewMainHorizontalOneWinner"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="@color/red"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintTop_toTopOf="@id/viewMainVerticalFirst"
+                app:layout_constraintBottom_toBottomOf="@id/viewMainHorizontalFirst"
+                app:layout_constraintStart_toStartOf="@id/viewMainHorizontalFirst"
+                app:layout_constraintEnd_toEndOf="@id/viewMainHorizontalFirst">
+            </View>
+
+            <View
+                android:id="@+id/viewMainHorizontalTwoWinner"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="@color/red"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@id/viewMainHorizontalFirst"
+                app:layout_constraintBottom_toBottomOf="@id/viewMainHorizontalSecond"
+                app:layout_constraintStart_toStartOf="@id/viewMainHorizontalFirst"
+                app:layout_constraintEnd_toEndOf="@id/viewMainHorizontalFirst">
+            </View>
+
+            <View
+                android:id="@+id/viewMainHorizontalThreeWinner"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="@color/red"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@id/viewMainHorizontalSecond"
+                app:layout_constraintBottom_toBottomOf="@id/viewMainVerticalFirst"
+                app:layout_constraintStart_toStartOf="@id/viewMainHorizontalFirst"
+                app:layout_constraintEnd_toEndOf="@id/viewMainHorizontalFirst">
+            </View>
+
+            <View
+                android:id="@+id/viewMainAxisOneWinner"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:rotation="135"
+                android:background="@color/red"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@id/frameLayoutMainThree"
+                app:layout_constraintBottom_toBottomOf="@id/frameLayoutMainSeven">
+            </View>
+
+            <View
+                android:id="@+id/viewMainAxisTwoWinner"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:rotation="-135"
+                android:background="@color/red"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@id/frameLayoutMainOne"
+                app:layout_constraintBottom_toBottomOf="@id/frameLayoutMainNine">
+            </View>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewMainWinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/defaultTextView"
+                android:gravity="center"
+                android:textSize="9sp"
+                android:textColor="@color/red"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="X wins!"
+                tools:ignore="SmallSp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.wear.widget.BoxInsetLayout>
+
+
+</layout>
